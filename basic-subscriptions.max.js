@@ -4746,7 +4746,7 @@ var _log = require("./utils/log");
  * @fileoverview
  * The entry point for runtime (swg-basic.js).
  */
-(0, _log.log)('BasicSubscriptions Runtime: 0.1.22-1623980693799');
+(0, _log.log)('BasicSubscriptions Runtime: 0.1.22-1624034789217');
 (0, _basicRuntime.installBasicRuntime)(self);
 
 },{"./polyfills":31,"./runtime/basic-runtime":42,"./utils/log":90}],17:[function(require,module,exports){
@@ -5147,7 +5147,7 @@ var ActivityPorts = /*#__PURE__*/function () {
         'analyticsContext': context.toArray(),
         'publicationId': pageConfig.getPublicationId(),
         'productId': pageConfig.getProductId(),
-        '_client': 'SwG 0.1.22-1623980693799',
+        '_client': 'SwG 0.1.22-1624034789217',
         'supportsEventManager': true
       }, args || {});
     }
@@ -11041,7 +11041,7 @@ var AnalyticsService = /*#__PURE__*/function () {
       }
 
       context.setReferringOrigin((0, _url.parseUrl)(this.getReferrer_()).origin);
-      context.setClientVersion('SwG 0.1.22-1623980693799');
+      context.setClientVersion('SwG 0.1.22-1624034789217');
       context.setUrl((0, _url.getCanonicalUrl)(this.doc_));
       var utmParams = (0, _url.parseQueryString)(this.getQueryString_());
       var campaign = utmParams['utm_campaign'];
@@ -17309,7 +17309,7 @@ var PAY_ORIGIN = {
 exports.PAY_ORIGIN = PAY_ORIGIN;
 
 function payUrl() {
-  return (0, _services.feCached)(PAY_ORIGIN['SANDBOX'] + '/gp/p/ui/pay');
+  return (0, _services.feCached)(PAY_ORIGIN['PRODUCTION'] + '/gp/p/ui/pay');
 }
 /**
  */
@@ -17401,7 +17401,7 @@ var PayClient = /*#__PURE__*/function () {
       this.client_ = this.createClient_(
       /** @type {!PaymentOptions} */
       {
-        environment: 'SANDBOX',
+        environment: 'PRODUCTION',
         'i': {
           'redirectKey': this.redirectVerifierHelper_.restoreKey()
         }
@@ -17978,7 +17978,7 @@ var PayStartFlow = /*#__PURE__*/function () {
       {
         'apiVersion': 1,
         'allowedPaymentMethods': ['CARD'],
-        'environment': 'SANDBOX',
+        'environment': 'PRODUCTION',
         'playEnvironment': 'STAGING',
         'swg': swgPaymentRequest,
         'i': {
@@ -20422,7 +20422,7 @@ function feCached(url) {
 
 function feArgs(args) {
   return Object.assign(args, {
-    '_client': 'SwG 0.1.22-1623980693799'
+    '_client': 'SwG 0.1.22-1624034789217'
   });
 }
 /**
